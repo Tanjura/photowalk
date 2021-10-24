@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head>
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>About</title>
+
+		<!--nav style-->
+		<link rel="stylesheet" href="nav-style.css" />
+		<!--nav animation-->
+		<script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    
+		<!--fonts-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+   		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> 
+
+	</head>
+
+
+	<body>
+		<!--nav-->	
+		<header>
+			<div>
+				<button class="header__button nav-btn-js" type="button"></button>
+				<nav class="header__nav nav-js" data-active="false">
+					<ul class="header__menu">
+						<li class="header__menu-item"><a href="index.html">About</a></li>
+						<li class="header__menu-item"><a href="hk-walks.html">Hong Kong Walks</a></li>
+						<li class="header__menu-item"><a href="bd-walks.html">Bangladesh Walks</a></li>
+						<li class="header__menu-item"><a href="nh-walks.html">Neighbourhood Walks</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+
+		<!--nav animation js-->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const revealerNav = window.revealer({
+					revealElementSelector: ".nav-js",
+					options: {
+						anchorSelector: ".nav-btn-js",
+					},
+				});
+
+				const actionBtn = document.querySelector(".nav-btn-js");
+				actionBtn.addEventListener("click", () => {
+					if (!revealerNav.isRevealed()) {
+						revealerNav.reveal();
+						actionBtn.setAttribute("data-open", true);
+					} else {
+						revealerNav.hide();
+						actionBtn.setAttribute("data-open", false);
+					}
+				});
+			});
+		</script>
+
+		<!--about text typewriter-->
+		<div class="typewriter">
+			<h1>This website is a collection of images from photo walks taken during 2019 and 2020.</h1>
+		  </div>
+
+		<style>
+		.typewriter h1 {
+  		overflow: hidden; /* Ensures the content is not revealed until the animation */
+ 		border-right: .15em solid #feb372; /* The typwriter cursor */
+  		white-space: nowrap; /* Keeps the content on a single line */
+  		margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  		letter-spacing: .15em; /* Adjust as needed */
+  		animation: 
+    	typing 5s steps(40, end), 
+    	blink-caret 0.5s step-end infinite;
+		font-family: 'Courier Prime', monospace;
+		font-weight: 200;
+		}
+
+		/* The typing effect */
+		@keyframes typing {
+		from { width: 0 }
+		to { width: 100% }
+		}
+
+		/* The typewriter cursor effect */
+		@keyframes blink-caret {
+		from, to { border-color: transparent }
+		50% { border-color: #feb372; }
+		}
+		</style>
+        
+	</body>
+
+
+</html>

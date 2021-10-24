@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head>
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>About</title>
+
+		<!--nav style-->
+		<link rel="stylesheet" href="nav-style.css" />
+		<!--nav animation-->
+		<script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    
+		<!--fonts-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+   		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+		<!--text style-->
+		<link rel="stylesheet" href="text-style.css"/> 
+
+	</head>
+
+
+	<body>
+		<!--nav-->	
+		<header>
+			<div>
+				<button class="header__button nav-btn-js" type="button"></button>
+				<nav class="header__nav nav-js" data-active="false">
+					<ul class="header__menu">
+						<li class="header__menu-item"><a href="index.html">About</a></li>
+						<li class="header__menu-item"><a href="hk-walks.html">Hong Kong Walks</a></li>
+						<li class="header__menu-item"><a href="bd-walks.html">Bangladesh Walks</a></li>
+						<li class="header__menu-item"><a href="nh-walks.html">Neighbourhood Walks</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+
+		<!--nav animation js-->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const revealerNav = window.revealer({
+					revealElementSelector: ".nav-js",
+					options: {
+						anchorSelector: ".nav-btn-js",
+					},
+				});
+
+				const actionBtn = document.querySelector(".nav-btn-js");
+				actionBtn.addEventListener("click", () => {
+					if (!revealerNav.isRevealed()) {
+						revealerNav.reveal();
+						actionBtn.setAttribute("data-open", true);
+					} else {
+						revealerNav.hide();
+						actionBtn.setAttribute("data-open", false);
+					}
+				});
+			});
+		</script>
+
+        	<!--intro text-->
+		<div class="header">Bangladesh</div>
+
+        <div class="container">
+            <div class="text-wrapper">
+                <div class="text-1 text">Walks in...</div>
+                <div class="text-2 text">Walks in...</div>
+                <div class="text-3 text">Walks in...</div>
+                <div class="text-4 text">Walks in...</div>
+                <div class="text-5 text">Walks in...</div>
+                <div class="text-6 text">Walks in...</div>
+                <div class="text-7 text">Walks in...</div>
+                <div class="text-8 text">Walks in...</div>
+                <div class="text-9 text">Walks in...</div>
+                <div class="text-10 text">Walks in...</div>
+                <div class="text-11 text">Walks in...</div>
+            </div>
+        </div> 
+        
+	</body>
+
+
+</html>
